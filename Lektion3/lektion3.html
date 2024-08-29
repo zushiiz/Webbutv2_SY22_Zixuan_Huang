@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lektion3 Grid templates</title>
+  <title>Lektion3 Grid templates, 4 Picture</title>
   <link rel="stylesheet" href="lektion3.css">
 </head>
 <body>
@@ -12,18 +12,26 @@
     <h1>Hello World</h1>
   </header>
 
-  <ul>
-    <li>Hello World</li>
-    <li>Hello World</li>
-    <li>Hello World</li>
-    <li>Hello World</li>
-    <li>Hello World</li>
-  </ul>
+  <aside>
+    <ul>
+      <li>Hello World</li>
+      <li>Hello World</li>
+      <li>Hello World</li>
+      <li>Hello World</li>
+      <li>Hello World</li>
+    </ul>
+  </aside>
 
   <main>
 
     <section id="img">
-      <img src="1400x1400.png" alt="image" width="50%">
+
+      <picture>
+        <source media="(min-width:650px)" srcset="561x564.png">
+        <source media="(min-width:465px)" srcset="800x800.png">
+        <img src="1400x1400.png" alt="blahaj image" style="width: 50%;">
+      </picture>
+
     </section>
 
     <section id="text">

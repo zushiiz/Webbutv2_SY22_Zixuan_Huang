@@ -17,8 +17,17 @@ body{
 header{
   grid-area: hd;
   text-align: center;
+  display: flex;
+  align-items: center;
+
+  background-image:url("561x564.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y:-125px;
+  background-position-x: center;
 }
-ul{
+
+aside{
   grid-area: lt;
   display: flex;
   flex-direction: column;
@@ -68,6 +77,21 @@ body{
   "ft ft";
 }
 
+source{
+  display: none;
+}
+
+picture{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  background: none;
+  border: none;
+}
+
 @media only screen and (min-width: 600px) {
   body{ 
     grid-template-columns: 20% 80%;
@@ -81,6 +105,13 @@ body{
   main{
     grid-template-areas:
     "img txt";
+  }
+
+  header{
+    background-image: url(800x800.png);
+    background-size: 100% 100%;
+    background-attachment: local;
+    background-position: center;
   }
 }
 
@@ -96,5 +127,13 @@ body{
   main{
     grid-template-areas:
     "txt img";
+  }
+  header{
+    background-image: url(1200x1200.png);
+    background-size: cover;
+  }
+  h1{
+    color: #152238;
+    
   }
 }
