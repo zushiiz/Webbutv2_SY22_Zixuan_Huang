@@ -37,7 +37,6 @@ function addTask(){
     removeTask(newTask.id);
   };
     newTask.appendChild(delButton);
-
 }
 
 function removeTask(taskId){
