@@ -34,7 +34,7 @@ function addTask(){
   const delButton = document.createElement("button");
   delButton.innerText = "x";
   delButton.onclick = function () {
-    removeTask(newTask.id);
+    popupConfirmation(newTask.id);
   };
     newTask.appendChild(delButton);
 }
@@ -42,6 +42,7 @@ function addTask(){
 function removeTask(taskId){
   const removedTask = document.getElementById(taskId);
   removedTask.remove();
+  removePopup();
 }
 
 function checked(event, taskId, textField){
@@ -58,4 +59,39 @@ function checked(event, taskId, textField){
     text.readOnly = false;
 
   }
+}
+
+function popupConfirmation(taskId){
+  const screen = document.body;
+
+  const popup = document.createElement("div");
+  popup.id = "confirmation-popup"
+  popup.classList.add("popup-style");
+
+  const confText = document.createElement("span");
+  confText.innerText = `Delete ${taskId}?`;
+  popup.appendChild(confText);
+
+  const declineButton = document.createElement("button");
+  declineButton.innerText = "Decline"
+  declineButton.onclick = function () {
+    removePopup();
+  };
+
+  const acceptButton = document.createElement("button");
+  acceptButton.innerText = "Accept"
+  acceptButton.onclick = function () {
+    removeTask(taskId);
+  };
+
+  popup.appendChild(acceptButton);
+  popup.appendChild(declineButton);
+
+  screen.appendChild(popup);
+
+}
+
+function removePopup(){
+  const popup = document.getElementById("confirmation-popup");
+  popup.remove();
 }
