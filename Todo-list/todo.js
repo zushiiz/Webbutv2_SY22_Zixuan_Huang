@@ -11,8 +11,10 @@ function addTask(){
 
   console.log(newTask.id);
 
-  const textField = document.createElement("input");
-  textField.type = "text";
+  const textField = document.createElement("span");
+  textField.role = "textbox";
+  textField.setAttribute("contenteditable", "true");
+
   textField.value = "Write your task here!";
   textField.id=`text${taskCounter}`;
   textField.readOnly = false;
@@ -65,16 +67,18 @@ function popupConfirmation(taskId){
   const screen = document.body;
 
   const popup = document.createElement("div");
-  popup.id= "popup-background";
+  popup.id= "confirmation-popup";
   popup.classList.add("popup-cover");
 
   const popupBox = document.createElement("div");
-  popupBox.id = "confirmation-popup"
   popupBox.classList.add("popup-style");
 
   const confText = document.createElement("span");
   confText.innerText = `Delete ${taskId}?`;
   popupBox.appendChild(confText);
+
+  const butCont = document.createElement("div");
+  butCont.classList.add("button-container");
 
   const declineButton = document.createElement("button");
   declineButton.innerText = "Decline"
@@ -88,17 +92,16 @@ function popupConfirmation(taskId){
     removeTask(taskId);
   };
 
-  popupBox.appendChild(acceptButton);
-  popupBox.appendChild(declineButton);
+  butCont.appendChild(acceptButton);
+  butCont.appendChild(declineButton);
 
-  screen.appendChild(popup);
-  screen.appendChild(popupBox)
+  popupBox.appendChild(butCont);
+  popup.appendChild(popupBox);
+  screen.appendChild(popup)
 
 }
 
 function removePopup(){
   const popup = document.getElementById("confirmation-popup");
-  const popup2 = document.getElementById("popup-background");
   popup.remove();
-  popup2.remove();
 }
