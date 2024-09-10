@@ -65,12 +65,16 @@ function popupConfirmation(taskId){
   const screen = document.body;
 
   const popup = document.createElement("div");
-  popup.id = "confirmation-popup"
-  popup.classList.add("popup-style");
+  popup.id= "popup-background";
+  popup.classList.add("popup-cover");
+
+  const popupBox = document.createElement("div");
+  popupBox.id = "confirmation-popup"
+  popupBox.classList.add("popup-style");
 
   const confText = document.createElement("span");
   confText.innerText = `Delete ${taskId}?`;
-  popup.appendChild(confText);
+  popupBox.appendChild(confText);
 
   const declineButton = document.createElement("button");
   declineButton.innerText = "Decline"
@@ -84,14 +88,17 @@ function popupConfirmation(taskId){
     removeTask(taskId);
   };
 
-  popup.appendChild(acceptButton);
-  popup.appendChild(declineButton);
+  popupBox.appendChild(acceptButton);
+  popupBox.appendChild(declineButton);
 
   screen.appendChild(popup);
+  screen.appendChild(popupBox)
 
 }
 
 function removePopup(){
   const popup = document.getElementById("confirmation-popup");
+  const popup2 = document.getElementById("popup-background");
   popup.remove();
+  popup2.remove();
 }
