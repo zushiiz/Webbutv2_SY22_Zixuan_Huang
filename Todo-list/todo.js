@@ -15,14 +15,13 @@ function addTask(){
   textField.role = "textbox";
   textField.setAttribute("contenteditable", "true");
 
-  textField.value = "Write your task here!";
+  textField.textContent = "Write your task here!";
   textField.id=`text${taskCounter}`;
-  textField.readOnly = false;
   newTask.appendChild(textField);
 
   textField.addEventListener("focus", function() {
-    if (this.value === "Write your task here!") {
-        this.value = "";
+    if (this.textContent === "Write your task here!") {
+        this.textContent = "";
     }
   });
 
@@ -54,11 +53,11 @@ function checked(event, taskId, textField){
 
   if (checkBox.checked) {
     task.classList.add("checked");
-    text.readOnly = true;
+    text.setAttribute("contenteditable", "false");
 
   } else {
     task.classList.remove("checked")
-    text.readOnly = false;
+    text.setAttribute("contenteditable", "true");
 
   }
 }
