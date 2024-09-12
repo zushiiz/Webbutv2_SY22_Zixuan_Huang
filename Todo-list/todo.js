@@ -11,6 +11,10 @@ function addTask(){
 
   console.log(newTask.id);
 
+  const taskNumber = document.createElement("p");
+  taskNumber.innerText = taskCounter;
+  newTask.appendChild(taskNumber);
+
   const textField = document.createElement("span");
   textField.role = "textbox";
   textField.setAttribute("contenteditable", "true");
@@ -27,6 +31,7 @@ function addTask(){
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
+  checkBox.classList.add("checkbox-style");
   checkBox.addEventListener("change", function(event) {
     checked(event, newTask.id, textField.id);
   });
@@ -38,12 +43,20 @@ function addTask(){
     popupConfirmation(newTask.id);
   };
     newTask.appendChild(delButton);
+
 }
 
 function removeTask(taskId){
   const removedTask = document.getElementById(taskId);
   removedTask.remove();
   removePopup();
+
+  if (document.querySelector("li")) {
+    console.log("exists");
+  } else{
+    taskCounter = 0;
+  }
+
 }
 
 function checked(event, taskId, textField){
@@ -54,11 +67,9 @@ function checked(event, taskId, textField){
   if (checkBox.checked) {
     task.classList.add("checked");
     text.setAttribute("contenteditable", "false");
-
   } else {
     task.classList.remove("checked")
     text.setAttribute("contenteditable", "true");
-
   }
 }
 
