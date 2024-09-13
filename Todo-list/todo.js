@@ -138,7 +138,7 @@ function popupConfirmation(taskId){
 
   popupBox.appendChild(butCont);
   popup.appendChild(popupBox);
-  screen.appendChild(popup)
+  screen.appendChild(popup);
 
 }
 
