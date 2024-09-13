@@ -1,6 +1,16 @@
 :root{
-  --primary:rgb(255, 255, 255);
-  --secondary:rgb(0, 0, 0);
+  --primary:#3c3c3c;
+  --secondary:#1e1e1e;
+  --complementary:#252526;
+  --header-text:#cccccc;
+  --text-col:#ffffff;
+  --button-text:#858585;
+  --button-col:#333333;
+  --num-col:#2566cb;
+  --gray-border: #808080;
+
+  --checked-text:gray;
+
   --col1:rgb(255, 0, 0);
   --col2:rgb(0, 255, 0);
   --col3:rgb(0, 0, 255);
@@ -23,7 +33,7 @@ body{
   align-items: center;
   justify-content: center;
 
-  background-color: var(--col6);
+  background-color: var(--secondary);
 }
 
 main{
@@ -32,7 +42,7 @@ main{
   display: grid;
   grid-template-rows: 50px auto;
   justify-content: center;
-  background-color: var(--col6);
+  background-color: var(--secondary);
 }
 
 header{
@@ -40,57 +50,76 @@ header{
   justify-content: center;
   align-items: center;
   padding: 2em 0;
-  background-color: var(--col5); 
+  background-color: var(--primary); 
+  color: var(--header-text);
 }
 
 section{
   display: flex;
-  width: 80vw;
+  width: 90vw;
   justify-content: center;
   align-items: center;
 }
 
 #list-section{
   min-height: 1.8em;
-  background-color: var(--col4);
-  padding-bottom: 1em;
+  background-color: var(--complementary);
+  padding: 1em 0 0.8em 0;
   margin-bottom: 2em;
   border-radius: 10px;
+  color: var(--text-col);
 }
 
 .list-style{
-  background-color: var(--col1);
+  background-color: var(--complementary);
+
   display: grid;
-  grid-template-columns: 10% 70% 10% 10%;
-  width: 70vw;
+  grid-template-columns: 10% 60% 10% 10% 10%;
+  width: 80vw;
   padding: 0.1em 0.5em;
   border-radius:10px;
-  margin-top: 1em;
+  margin-top: 0.2em;
 }
 
 #add-button{
   height: 80%;
   width: 5em;
   border-radius: 15px;
+  background-color: var(--button-col);
+  color: var(--button-text);
+}
+
+button:hover{
+  color: var(--text-col);
+  border: solid var(--text-col);
+}
+
+button{
+  background-color: var(--button-col);
+  color: var(--button-text); 
+  border-radius: 15px;
 }
 
 li button, .checkbox-style{
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin: auto;
   text-align: center;
   align-self: center;
 }
 
 .checked{
-  background-color: darkgray;
-  color: gray;
+  color: var(--checked-text);
+}
+
+.checked p{
+  columns: var(--checked-text);
 }
 
 span{
   overflow: hidden;
   max-width: 80vw;
-  background-color: white;
+  background-color: var(--complementary);
   align-self: center;
   margin: 0.1em 0;
 }
@@ -98,6 +127,11 @@ span{
 p{
   text-align: center;
   align-self: center;
+  color: var(--num-col);
+}
+
+.bracket-style{
+  color: var(--gray-border);
 }
 
 .popup-style{
@@ -118,6 +152,11 @@ p{
   margin-top: 1rem;
 }
 
+.button-container button{
+  height: 2em;
+  width: 5em;
+}
+
 .popup-cover{
   width: 100vw;
   height: 100vh;
@@ -128,6 +167,11 @@ p{
   justify-content: center;
   align-items: center;
   top:0;
+}
+
+.popup-style span{
+  background-color: var(--primary);
+  color: var(--header-text);
 }
 
 @media only screen and (min-width: 769px) {

@@ -11,13 +11,27 @@ function addTask(){
 
   console.log(newTask.id);
 
-  const taskNumber = document.createElement("p");
+  const taskNumContainer = document.createElement("p");
+
+  const openBracket = document.createElement("span");
+  openBracket.innerText = "<";
+  openBracket.classList.add("bracket-style");
+  const taskNumber = document.createElement("span");
   taskNumber.innerText = taskCounter;
-  newTask.appendChild(taskNumber);
+  const closedBracket1 = document.createElement("span");
+  closedBracket1.innerText = ">";
+  closedBracket1.classList.add("bracket-style");
+
+  taskNumContainer.appendChild(openBracket);
+  taskNumContainer.appendChild(taskNumber);
+  taskNumContainer.appendChild(closedBracket1);
+
+  newTask.appendChild(taskNumContainer);
 
   const textField = document.createElement("span");
   textField.role = "textbox";
   textField.setAttribute("contenteditable", "true");
+  textField.setAttribute("spellcheck", "false");
 
   textField.textContent = "Write your task here!";
   textField.id=`text${taskCounter}`;
@@ -28,6 +42,23 @@ function addTask(){
         this.textContent = "";
     }
   });
+
+    const taskNumContainer2 = document.createElement("p");
+
+    const openBracket2 = document.createElement("span");
+    openBracket2.innerText = "<";
+    openBracket2.classList.add("bracket-style");
+    const taskNumber2 = document.createElement("span");
+    taskNumber2.innerText = taskCounter;
+    const closedBracket2 = document.createElement("span");
+    closedBracket2.innerText = "/>";
+    closedBracket2.classList.add("bracket-style");
+  
+    taskNumContainer2.appendChild(openBracket2);
+    taskNumContainer2.appendChild(taskNumber2);
+    taskNumContainer2.appendChild(closedBracket2);
+  
+    newTask.appendChild(taskNumContainer2);
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
