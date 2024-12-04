@@ -50,16 +50,36 @@
 
     </article>
 
-    <article class="container-fluid">
+    <article class="container-fluid ">
 
       <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active bg-info justify-content-center d-flex">
 
-            <section class="d-flex w-100 bg-dark justify-content-center" style="min-height: 60vh;">
-              Öppet Hus!
-              <button onclick="scrollToArticle('oppetHus')"></button>
+            <article class="container-sm row py-5">
+            <section class="jumbotron col-sm-7 ps-sm-4" style="min-height: 60vh;">
+              <h1 class="display-4 text-center">Öppet Hus</h1>
+              <p class="lead text-center">Välkommen till våra öppet hus!</p>
+              <hr class="my-4">
+
+              <p class="text-center">Vi har öppet hus omg kom nu till skolan!!!</p>
+
+              <div class="justify-content-center d-flex">
+                <button class="btn btn-primary" onclick="scrollToArticle('oppetHus')">Se mer</button>
+              </div>
             </section>
+
+            <section class="col-sm-5 pe-sm-4">
+              <h2>Våra tider</h2>
+              <ul class="list-group">
+                <li class="list-group-item">29 Januari</li>
+                <li class="list-group-item">12 Februari</li>
+                <li class="list-group-item">7 Maj</li>
+              </ul>
+            </section>
+
+
+            </article>
 
           </div>
           <div class="carousel-item">
@@ -74,11 +94,11 @@
             </section>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev" style="width: 5%;">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next" style="width: 5%;">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
