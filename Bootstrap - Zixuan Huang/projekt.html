@@ -56,42 +56,38 @@
         <div class="carousel-inner">
           <div class="carousel-item active bg-info justify-content-center d-flex">
 
-            <article class="container-sm row py-5">
-            <section class="jumbotron col-sm-7 ps-sm-4" style="min-height: 60vh;">
-              <h1 class="display-4 text-center">Öppet Hus</h1>
-              <p class="lead text-center">Välkommen till våra öppet hus!</p>
-              <hr class="my-4">
-
-              <p class="text-center">Vi har öppet hus omg kom nu till skolan!!!</p>
-
-              <div class="justify-content-center d-flex">
-                <button class="btn btn-primary" onclick="scrollToArticle('oppetHus')">Se mer</button>
-              </div>
-            </section>
-
-            <section class="col-sm-5 pe-sm-4">
-              <h2>Våra tider</h2>
-              <ul class="list-group">
-                <li class="list-group-item">29 Januari</li>
-                <li class="list-group-item">12 Februari</li>
-                <li class="list-group-item">7 Maj</li>
-              </ul>
-            </section>
-
-
+            <article class="container-sm row py-5" style="min-height: 60vh;">
+              <section class="jumbotron col-sm-7 ps-sm-4">
+                <h1 class="display-4 text-center">Öppet Hus</h1>
+                <p class="lead text-center">Välkommen till våra öppet hus!</p>
+                <hr class="my-4">
+                <p class="text-center">Vi har öppet hus omg kom nu till skolan!!!</p>
+                <div class="justify-content-center d-flex">
+                  <button class="btn btn-primary" onclick="scrollToArticle('oppetHus')">Se mer</button>
+                </div>
+              </section>
+              <section class="col-sm-5 pe-sm-4">
+                <h2>Våra tider</h2>
+                <ul class="list-group">
+                  <li class="list-group-item">29 Januari</li>
+                  <li class="list-group-item">12 Februari</li>
+                  <li class="list-group-item">7 Maj</li>
+                </ul>
+              </section>
             </article>
 
           </div>
-          <div class="carousel-item">
-            <section class="d-block w-100 bg-warning" style="min-height: 60vh;">
-              Sociala Medier
-            </section>
+
+          <div class="carousel-item bg-warning" style="min-height: 60vh;">
+            <article class="container-sm py-5">
+
+            </article>
           </div>
 
-          <div class="carousel-item">
-            <section class="d-block w-100 bg-danger" style="min-height: 60vh;">
-              Events
-            </section>
+          <div class="carousel-item bg-danger" style="min-height: 60vh;">
+            <article class="container-sm py-5">
+
+            </article>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev" style="width: 5%;">
@@ -197,16 +193,26 @@
 
     </article>
 
-    <article id="oppetHus" style="height: 100vh;"> <!-- remove -->
-      ÖppetHus
+    <article id="oppetHus" class="bg-info row" style="height: 100vh;"> <!-- remove -->
+      
+      <section class="col-sm-6">
+        <h1>Öppet Hus</h1>        
+      </section>
+
+      <section class="col-sm-6">
+        <h2>Hitta oss här!</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2036.6275831674052!2d18.083463576684306!3d59.30577681290628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f7824d3390c9b%3A0xa2cfb7c87c847ce5!2sLBS%20Stockholm%20S%C3%B6dra!5e0!3m2!1ssv!2sse!4v1733476417192!5m2!1ssv!2sse" width="auto" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+
+
     </article>
     
-    <article id="socialMedia">
+    <article id="socialMedia" class="bg-warning">
       Sociala Medier
     </article>
 
-    <article id="events">
-      Events Det här läsåret
+    <article id="news" class="bg-danger">
+      Inget nytt händer ._.
     </article>
 
   </main>
