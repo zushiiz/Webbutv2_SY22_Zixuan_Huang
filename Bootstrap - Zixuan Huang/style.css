@@ -2,3 +2,41 @@
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
+
+.spin1{
+  animation: spin 2s linear infinite;;
+}
+
+.spin2{
+  animation: spin2 2s linear infinite;;
+}
+
+.spin3{
+  animation: spin3 2s linear infinite;;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes spin2 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes spin3 {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
