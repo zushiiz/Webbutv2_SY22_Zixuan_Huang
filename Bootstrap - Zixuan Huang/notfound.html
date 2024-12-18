@@ -10,17 +10,25 @@
 <body>
 
   <header class="container-fluid overflow-hidden m-0 p-0">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light p-0 m-0 row">
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark border-bottom border-light p-0 m-0 row">
+
       <a href="index.html" class="navbar-brand p-0 m-0 col-2">
         <img src="lbs-logo.gif" alt="lbs-logo" class="w-100">
       </a>
-      <div class="navbar-nav col-sm-10 p-0">
-        <a href="#" class="nav-link btn btn-primary w-100">Om LBS</a>          
-        <a href="#" class="nav-link btn btn-primary w-100">Program</a>
-        <a href="#" class="nav-link btn btn-primary w-100">Ansök</a>
-        <a href="#" class="nav-link btn btn-primary w-100">Kontakt</a>
+
+      <div class="navbar-nav col-sm-8 p-0">
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Om LBS</a>
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Program</a>
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Ansök</a>
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Kontakt</a>
       </div>
+
+      <div class="col-sm-2">
+        <input class="form-control mr-sm-2" type="search" placeholder="This doesn't work">
+      </div>
+
     </nav>
+
   </header>
 
   <main class="d-flex flex-column align-items-center h-75">
@@ -29,12 +37,26 @@
     <p>Sorry! It seems the page you are looking for could not be found...</p>
     <p>The person working on this project got too lazy</p>
     <p>Here is a raccoon for compensation!</p>
-    <button id="toggleButton" class="btn btn-primary">Funny Button</button>
+    <button id="toggleButton" class="btn btn-primary bg-warning border-light text-dark">Funny Button</button>
 
     <img src="404.png" alt="raccoon" id="raccoon" class="w-25 h-auto">
 
   </main>
   
+  <footer class="container-fluid overflow-hidden m-0 bg-warning">
+    <div class="container">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="notfound.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="notfound.html" class="nav-link px-2 text-body-secondary">Om LBS</a></li>
+          <li class="nav-item"><a href="notfound.html" class="nav-link px-2 text-body-secondary">Program</a></li>
+          <li class="nav-item"><a href="notfound.html" class="nav-link px-2 text-body-secondary">Kontakt</a></li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+      </footer>
+    </div>
+  </footer>
+
 </body>
 <script src="app.js"></script>
 </html>

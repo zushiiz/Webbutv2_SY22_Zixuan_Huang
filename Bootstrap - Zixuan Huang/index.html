@@ -11,31 +11,35 @@
 <body class="bg-dark">
   
   <header class="container-fluid overflow-hidden m-0 p-0">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light p-0 m-0 row">
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark border-bottom border-light p-0 m-0 row">
 
       <a href="#" class="navbar-brand p-0 m-0 col-2">
         <img src="lbs-logo.gif" alt="lbs-logo" class="w-100">
       </a>
 
-      <div class="navbar-nav col-sm-10 p-0">
-        <a href="notfound.html" class="nav-link btn btn-primary w-100">Om LBS</a>          
-        <a href="notfound.html" class="nav-link btn btn-primary w-100">Program</a>
-        <a href="notfound.html" class="nav-link btn btn-primary w-100">Ansök</a>
-        <a href="notfound.html" class="nav-link btn btn-primary w-100">Kontakt</a>
+      <div class="navbar-nav col-sm-8 p-0">
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Om LBS</a>
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Program</a>
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Ansök</a>
+        <a href="notfound.html" class="nav-link btn btn-primary w-100 text-light border-light border">Kontakt</a>
+      </div>
+
+      <div class="col-sm-2">
+        <input class="form-control mr-sm-2" type="search" placeholder="This doesn't work">
       </div>
 
     </nav>
 
   </header>
 
-  <main class="container-fluid row justify-content-center m-0 p-0">
+  <main class="container-fluid row justify-content-center m-0">
 
-    <article class="row shadow-lg bg-warning overflow-hidden py-2 contianer-sm">
+    <article class="row overflow-hidden my-2 py-2 border-light border">
 
       <section class="col-sm-6">
-        <h1>LBS Kreativa Gymnasiet</h1>
-        <h2>Stockholm Södra</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sequi id eos, temporibus hic quasi tempora rerum quisquam omnis quos at inventore voluptas accusamus quas ex! Ab optio earum veniam!</p>
+        <h1 class="text-light">LBS Kreativa Gymnasiet</h1>
+        <h2 class="text-light">Stockholm Södra</h2>
+        <p class="text-light">Vi är LBS Kreativa Gymnasiet Stockholm Södra. Yes, cool skola, kom hit, vi gör saker. Programmering, grafisk design, film you name it we do it!!! Gå på vår skola nu!!! KOM NU!!! DU MÅSTE!!!!!</p>
       </section>
 
       <section class="col-sm-6">
@@ -48,20 +52,19 @@
 
     </article>
 
-    <article class="container-fluid py-2">
+    <article class="contianer-fluid">
 
-      <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+      <div id="carouselControls" class="carousel slide border border-light" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active bg-info justify-content-center d-flex">
-
-            <article class="container-sm row py-5" style="height: 80vh;">
+          <div class="carousel-item active bg-dark justify-content-center d-flex"  style="height:80vh;">
+            <article class="container-sm row py-5 h-100">
               <section class="jumbotron col-sm-7 ps-sm-4">
-                <h1 class="display-4 text-center">Öppet Hus</h1>
-                <p class="lead text-center">Välkommen till våra öppet hus!</p>
-                <hr class="my-4">
-                <p class="text-center">Vi har öppet hus omg kom nu till skolan!!!</p>
+                <h1 class="display-4 text-center text-light">Öppet Hus</h1>
+                <p class="lead text-center text-light">Välkommen till våra öppet hus!</p>
+                <hr class="my-4 bg-light">
+                <p class="text-center text-light">Vi har öppet hus omg kom nu till skolan!!!</p>
                 <div class="justify-content-center d-flex">
-                  <button class="btn btn-primary" onclick="scrollToArticle('oppetHus')">Se mer</button>
+                  <button class="btn btn-primary bg-warning border-light text-dark" onclick="scrollToArticle('oppetHus')">Se mer</button>
                 </div>
               </section>
               <section class="col-sm-5 pe-sm-4">
@@ -73,56 +76,46 @@
                 </ul>
               </section>
             </article>
-
           </div>
 
-          <div class="carousel-item bg-warning" style="height: 80vh;">
-            <article class="container-sm py-5 d-flex flex-column align-items-center justify-content-center position-relative h-100">
+          <div class="carousel-item bg-warning" style="height:80vh;">
+            <div class="justify-content-center d-flex">
 
-              <h1 class="position-absolute top-0">Följ oss på Sociala Medier!</h1>
-              <section class="container flex-row d-flex justify-content-evenly align-items-center">
-                <a href="notfound.html">facebook</a>
-                <a href="notfound.html">instagram</a>
-                <a href="notfound.html">youtube</a>                
+            <article class="container-sm row py-5">
+              <section class="jumbotron col-sm-7 ps-sm-4">
+                <h1 class="display-4 text-center">Social Media</h1>
+                <hr class="my-4">
+                <p class="text-center">Följ oss på våra Sociala Medier!</p>
               </section>
-
-
+              <section class="col-sm-5 pe-sm-4">
+                <h2>Länkar</h2>
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                  <a href="notfound.html" class="btn btn-primary w-100 my-3 bg-dark border-light">Facebook</a>
+                  <a href="notfound.html" class="btn btn-primary w-100 my-3 bg-dark border-light">Instagram</a>
+                  <a href="notfound.html" class="btn btn-primary w-100 my-3 bg-dark border-light">YouTube</a>
+                </div>
+              </section>
             </article>
+
+            </div>
           </div>
 
-          <div class="carousel-item bg-danger" style="height: 80vh;">
+          <div class="carousel-item bg-dark" style="height:80vh;">
+            <div class="justify-content-center d-flex">
             <article class="container-sm py-5">
-              <h1>Nyheter</h1>
-              <section class="d-flex flex-row justify-content-evenly">
-
-                <a href="notfound.html" class="card hover-scale" style="max-width: 15em; min-height: 10rem;">
-                  <img src="news400x325.jpeg" alt="placeholder-news" class="card-img-top">
-                  <div class="card-body">
-                    <h3 class="card-title">news and stuff</h3>
-                    <p class="card-text">news and stuff</p>
-                  </div>
-                </a>
-
-                <a href="notfound.html" class="card hover-scale" style="max-width: 15em; min-height: 10rem;">
-                  <img src="news400x325.jpeg" alt="placeholder-news" class="card-img-top">
-                  <div class="card-body">
-                    <h3 class="card-title">news and stuff</h3>
-                    <p class="card-text">news and stuff</p>
-                  </div>
-                </a>
-
-                <a href="notfound.html" class="card hover-scale" style="max-width: 15em; min-height: 10rem;">
-                  <img src="news400x325.jpeg" alt="placeholder-news" class="card-img-top">
-                  <div class="card-body">
-                    <h3 class="card-title">news and stuff</h3>
-                    <p class="card-text">news and stuff</p>
-                  </div>
-                </a>
-
-             </section>
-
+              <section class="jumbotron">
+                <h1 class="display-4 text-center text-light">Elev för en dag</h1>
+                <p class="lead text-center text-light">Intressanta saker woohoo!</p>
+                <hr class="my-4 bg-light">
+                <p class="text-center text-light">Boka att bli elev för en dag på vår skola!!!</p>
+                <div class="justify-content-center d-flex">
+                  <a href="notfound.html" class="btn btn-primary w-50 bg-warning border-light text-dark">Boka</a>
+                </div>
+              </section>
             </article>
+            </div>
           </div>
+
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev" style="width: 5%;">
@@ -139,88 +132,88 @@
 
     <article class="container-fluid d-flex justify-content-center flex-wrap py-2">
 
-      <section class="card mx-5 my-4 hover-scale" style="max-width: 18em; min-height: 10rem;">
+      <section class="card mx-5 my-4 hover-scale border border-light bg-dark" style="max-width: 18em; min-height: 10rem;">
         <img src="AW400x300.jpg" alt="AW img" class="card-img-top">
         <div class="card-body">
-          <h3 class="card-title">App- och Webbutveckling</h3>
-          <h4 class="card-subtitle">Program</h4>
+          <h3 class="card-title text-light">App- och Webbutveckling</h3>
+          <h4 class="card-subtitle text-light">Program</h4>
           <p class="card-text">Teknikprogrammet</p>
-          <h4 class="card-subtitle">Inriktning</h4>
-          <p class="card-text mb-5">Informations- och medieteknik</p>
+          <h4 class="card-subtitle text-light">Inriktning</h4>
+          <p class="card-text mb-5 text-light">Informations- och medieteknik</p>
           <div class="position-absolute bottom-0 start-0 m-3">
-            <a href="notfound.html" class="btn btn-primary">Mer</a>
+            <a href="notfound.html" class="btn btn-primary bg-warning border-light text-dark">Mer</a>
           </div>
         </div>
       </section>
 
-      <section class="card mx-5 my-4 hover-scale" style="max-width: 18em; min-height: 10rem;">
+      <section class="card mx-5 my-4 hover-scale border border-light bg-dark" style="max-width: 18em; min-height: 10rem;">
         <img src="GD400x300.jpg" alt="GD img" class="card-img-top">
         <div class="card-body">
-          <h3 class="card-title">Grafisk Design</h3>
-          <h4 class="card-subtitle">Program</h4>
+          <h3 class="card-title text-light">Grafisk Design</h3>
+          <h4 class="card-subtitle text-light">Program</h4>
           <p class="card-text">Estetiska programmet</p>
-          <h4 class="card-subtitle">Inriktning</h4>
-          <p class="card-text mb-5">Bild och Formgivning</p>
+          <h4 class="card-subtitle text-light">Inriktning</h4>
+          <p class="card-text mb-5 text-light">Bild och Formgivning</p>
           <div class="position-absolute bottom-0 start-0 m-3">
-            <a href="notfound.html" class="btn btn-primary">Mer</a>
+            <a href="notfound.html" class="btn btn-primary bg-warning border-light text-dark">Mer</a>
           </div>
         </div>
       </section>
 
-      <section class="card mx-5 my-4 hover-scale" style="max-width: 18em; min-height: 10rem;">
+      <section class="card mx-5 my-4 hover-scale border border-light bg-dark" style="max-width: 18em; min-height: 10rem;">
         <img src="SU400x300.jpg" alt="SU img" class="card-img-top">
         <div class="card-body">
-          <h3 class="card-title">Spelutveckling</h3>
-          <h4 class="card-subtitle">Program</h4>
+          <h3 class="card-title text-light">Spelutveckling</h3>
+          <h4 class="card-subtitle text-light">Program</h4>
           <p class="card-text">Teknikprogrammet</p>
-          <h4 class="card-subtitle">Inriktning</h4>
-          <p class="card-text mb-5">Design och Produktutveckling</p>
+          <h4 class="card-subtitle text-light">Inriktning</h4>
+          <p class="card-text mb-5 text-light">Design och Produktutveckling</p>
           <div class="position-absolute bottom-0 start-0 m-3">
-            <a href="notfound.html" class="btn btn-primary">Mer</a>
+            <a href="notfound.html" class="btn btn-primary bg-warning border-light text-dark">Mer</a>
           </div>
         </div>
       </section>
 
 
-      <section class="card mx-5 my-4 hover-scale" style="max-width: 18em; min-height: 10rem;">
+      <section class="card mx-5 my-4 hover-scale border border-light bg-dark" style="max-width: 18em; min-height: 10rem;">
         <img src="SG400x300.jpg" alt="SG img" class="card-img-top">
         <div class="card-body">
-          <h3 class="card-title">Spelgrafik</h3>
-          <h4 class="card-subtitle">Program</h4>
+          <h3 class="card-title text-light">Spelgrafik</h3>
+          <h4 class="card-subtitle text-light">Program</h4>
           <p class="card-text">Estetiska programmet</p>
-          <h4 class="card-subtitle">Inriktning</h4>
-          <p class="card-text mb-5">Bild och Formgivning</p>
+          <h4 class="card-subtitle text-light">Inriktning</h4>
+          <p class="card-text mb-5 text-light">Bild och Formgivning</p>
           <div class="position-absolute bottom-0 start-0 m-3">
-            <a href="notfound.html" class="btn btn-primary">Mer</a>
+            <a href="notfound.html" class="btn btn-primary bg-warning border-light text-dark">Mer</a>
           </div>
         </div>
       </section>
 
 
-      <section class="card mx-5 my-4 hover-scale" style="max-width: 18em; min-height: 10rem;">
+      <section class="card mx-5 my-4 hover-scale border border-light bg-dark" style="max-width: 18em; min-height: 10rem;">
         <img src="FF400x300.jpg" alt="FF img" class="card-img-top">
         <div class="card-body">
-          <h3 class="card-title">Foto och Film</h3>
-          <h4 class="card-subtitle">Program</h4>
+          <h3 class="card-title text-light">Foto och Film</h3>
+          <h4 class="card-subtitle text-light">Program</h4>
           <p class="card-text">Estetiska programmet</p>
-          <h4 class="card-subtitle">Inriktning</h4>
-          <p class="card-text mb-5">Estetik och Media</p>
+          <h4 class="card-subtitle text-light">Inriktning</h4>
+          <p class="card-text mb-5 text-light">Estetik och Media</p>
           <div class="position-absolute bottom-0 start-0 m-3">
-            <a href="notfound.html" class="btn btn-primary">Mer</a>
+            <a href="notfound.html" class="btn btn-primary bg-warning border-light text-dark">Mer</a>
           </div>
         </div>
       </section>
 
-      <section class="card mx-5 my-4 hover-scale" style="max-width: 18em; min-height: 10rem;">
+      <section class="card mx-5 my-4 hover-scale border border-light bg-dark" style="max-width: 18em; min-height: 10rem;">
         <img src="MB400x300.jpg" alt="MB img" class="card-img-top">
         <div class="card-body">
-          <h3 class="card-title">Media-Beteende</h3>
-          <h4 class="card-subtitle">Program</h4>
+          <h3 class="card-title text-light">Media-Beteende</h3>
+          <h4 class="card-subtitle text-light">Program</h4>
           <p class="card-text">Estetiska programmet</p>
-          <h4 class="card-subtitle">Inriktning</h4>
-          <p class="card-text mb-5">Estetik och Media</p>
+          <h4 class="card-subtitle text-light">Inriktning</h4>
+          <p class="card-text mb-5 text-light">Estetik och Media</p>
           <div class="position-absolute bottom-0 start-0 m-3">
-            <a href="notfound.html" class="btn btn-primary">Mer</a>
+            <a href="notfound.html" class="btn btn-primary bg-warning border-light text-dark">Mer</a>
           </div>
         </div>
       </section>
@@ -228,19 +221,19 @@
 
     </article>
 
-    <article id="oppetHus" class="bg-info py-2" style="min-height: 70vh;"> <!-- remove -->
+    <article id="oppetHus" class="bg-warning py-2 border border-light my-2" style="min-height: 70vh;"> <!-- remove -->
 
       <h1>Öppet Hus</h1>  
 
       <div class="row h-auto">
       <section class="col-12 col-sm-6 d-flex flex-column align-items-center">   
         <h2>Våra tider</h2>
-        <ul class="list-group">
-          <li class="list-group-item">29 Januari</li>
-          <li class="list-group-item">12 Februari</li>
-          <li class="list-group-item">7 Maj</li>
+        <ul class="list-group w-100 align-items-center my-2">
+          <li class="list-group-item w-75 text-center">51 Januari</li>
+          <li class="list-group-item w-75 text-center">76 Februari</li>
+          <li class="list-group-item w-75 text-center">-23 Maj</li>
         </ul>
-        <a href="notfound.html" class="btn btn-primary">Boka öppet hus</a>
+        <a href="notfound.html" class="btn btn-primary my-4 bg-dark border-light">Boka öppet hus</a>
         
       </section>
 
@@ -254,9 +247,9 @@
 
     </article>
 
-    <article id="news" class="bg-danger py-2" style="min-height: 70vh;">
+    <article id="news" class="bg-dark py-2 border border-light my-2" style="min-height: 70vh;">
 
-      <h1>NYHETER!!!!</h1>
+      <h1 class="text-light">NYHETER!!!!</h1>
 
       <section class="container-fluid d-flex justify-content-evenly flex-wrap">
 
@@ -289,7 +282,7 @@
 
   </main>
 
-  <footer class="container-fluid overflow-hidden m-0 bg-light">
+  <footer class="container-fluid overflow-hidden m-0 bg-warning">
     <div class="container">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
