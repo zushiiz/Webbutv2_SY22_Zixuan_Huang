@@ -1,16 +1,20 @@
 var player1;
 var playerInput = {};
+const canvasW = 1000;
+const canvasH = canvasW * 0.6;
 
 function startGame(){
-  player1 = new gameObject(30, 30, 10, 120);
+  player1 = new playerObject(30, 100, 10, canvasH/2);
+  player2 = new playerObject(30, 100, 960,canvasH/2);
+  ball = new ballObject(30, 30, canvasW/2, canvasH/2)
   gameArea.start();
 }
 
 var gameArea = {
   canvas : document.createElement("canvas"),
   start : function() {
-    this.canvas.width = 500;
-    this.canvas.height = 500;
+    this.canvas.width = canvasW;
+    this.canvas.height = canvasH;
     this.context = this.canvas.getContext("2d");
     document.getElementById("game-container").appendChild(this.canvas);
     this.interval = setInterval(gameUpdate, 20);
@@ -22,12 +26,21 @@ var gameArea = {
 
 function gameUpdate(){
   gameArea.clear();
-  inputs();
+  p1Inputs(player1);
+  p2Inputs(player2);
   player1.updatePosition();
   player1.update();
+  player2.updatePosition();
+  player2.update();
+  ball.updatePosition();
+  ball.update();
+  ball.bounceX();
+  ball.bounceY();
+  console.log(` ${player1.y} ${player1.x} ${ball.y} ${ball.x}`);
+  score();
 }
 
-function gameObject(w, h, x, y){
+function playerObject(w, h, x, y){
   this.width = w;
   this.height = h;
   this.speedY = 0;
@@ -43,29 +56,84 @@ function gameObject(w, h, x, y){
   }
 }
 
-function moveup() {
-  player1.speedY = -1; 
-}
-
-function movedown() {
-  player1.speedY = 1; 
-}
-
-function inputs(e){
-
-  if (playerInput["w"]){
-    console.log("w");
-    player1.speedY = -1;
+function ballObject(w, h, x, y){
+  this.width = w;
+  this.height = h;
+  this.speedY = 0;
+  this.speedX = 5;
+  this.x = x;
+  this.y = y;
+  this.update = function() {
+    ctx = gameArea.context;
+    ctx.fillStyle = "white";
+    ctx.fillRect(this.x, this.y, this.width, this.height);
   }
-  else if (playerInput["s"]){
-    player1.speedY = 1;
+  this.updatePosition = function() {
+    this.y += this.speedY;
+    this.x += this.speedX;
+  }
+  this.bounceX = function() {
+    if (collision(player1, ball) || collision(player2, ball)){
+      this.speedX *= -1;
+      this.speedY = Math.floor(Math.random() * 10);
+    }
+  }
+  this.bounceY = function() {
+    if (this.y > (canvasH - this.width) || 
+    this.y < 0 ||
+    collision(player1, ball) ||
+    collision(player2, ball)
+    ){
+      this.speedY *= -1;
+    }
+  } 
+}
+
+function score(){
+  if(ball.x > canvasW || 
+    ball.x < -ball.width){
+      ctx.clearRect(0, 0, canvasW, canvasH);
+      startGame();
+    }
+}
+
+function p1Inputs(p){
+  if (playerInput["w"] && p.y > 0){
+    console.log("w");
+    p.speedY = -10;
+  }
+  else if (playerInput["s"] && p.y < (canvasH - p.height)){
+    p.speedY = 10;
   }
   else{
-    console.log("stop");
-    player1.speedY = 0;
+    console.log("stopped");
+    p.speedY = 0;
   }
-
 }
+
+function p2Inputs(p){
+  if (playerInput["ArrowUp"] && p.y > 0){
+    console.log("w");
+    p.speedY = -10;
+  }
+  else if (playerInput["ArrowDown"] && p.y < (canvasH - p.height)){
+    p.speedY = 10;
+  }
+  else{
+    console.log("stopped");
+    p.speedY = 0;
+  }
+}
+
+function collision(rect1, rect2) {
+  return (
+    rect1.x < rect2.x + rect2.width &&
+    rect1.x + rect1.width > rect2.x &&
+    rect1.y < rect2.y + rect2.height &&
+    rect1.y + rect1.height > rect2.y
+  );
+}
+
 
 function keyDown(e){
   console.log("press");
