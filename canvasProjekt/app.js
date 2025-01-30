@@ -1,12 +1,18 @@
 var player1;
 var playerInput = {};
+var p1Score;
+var p2Score;
 const canvasW = 1000;
 const canvasH = canvasW * 0.6;
 
 function startGame(){
   player1 = new playerObject(30, 100, 10, canvasH/2);
   player2 = new playerObject(30, 100, 960,canvasH/2);
-  ball = new ballObject(30, 30, canvasW/2, canvasH/2)
+  p1Score = 0;
+  p2Score = 0;
+  document.getElementById("player1").innerHTML = p1Score;
+  document.getElementById("player2").innerHTML = p2Score;
+  ball = new ballObject(30, 30, canvasW/2, canvasH/2);
   gameArea.start();
 }
 
@@ -36,7 +42,6 @@ function gameUpdate(){
   ball.update();
   ball.bounceX();
   ball.bounceY();
-  console.log(` ${player1.y} ${player1.x} ${ball.y} ${ball.x}`);
   score();
 }
 
@@ -75,6 +80,11 @@ function ballObject(w, h, x, y){
   this.bounceX = function() {
     if (collision(player1, ball) || collision(player2, ball)){
       this.speedX *= -1;
+      if (this.speedX > 0){
+        this.speedX += 0.1;
+      } else{
+        this.speedX -= 0.1;
+      }
       this.speedY = Math.floor(Math.random() * 10);
     }
   }
@@ -90,37 +100,46 @@ function ballObject(w, h, x, y){
 }
 
 function score(){
+  if (ball.x > canvasW) {
+    p1Score += 1;
+    document.getElementById("player1").innerHTML = p1Score;
+  } 
+  else if (ball.x < -ball.width){
+    p2Score += 1;
+    document.getElementById("player2").innerHTML = p2Score;
+  }
   if(ball.x > canvasW || 
     ball.x < -ball.width){
       ctx.clearRect(0, 0, canvasW, canvasH);
-      startGame();
+      player1 = new playerObject(30, 100, 10, canvasH/2);
+      player2 = new playerObject(30, 100, 960,canvasH/2);
+      ball = new ballObject(30, 30, canvasW/2, canvasH/2);
+      if (p1Score > p2Score) { // doesnt work
+        ball.speedX * -1;
+      }
     }
 }
 
 function p1Inputs(p){
   if (playerInput["w"] && p.y > 0){
-    console.log("w");
     p.speedY = -10;
   }
   else if (playerInput["s"] && p.y < (canvasH - p.height)){
     p.speedY = 10;
   }
   else{
-    console.log("stopped");
     p.speedY = 0;
   }
 }
 
 function p2Inputs(p){
   if (playerInput["ArrowUp"] && p.y > 0){
-    console.log("w");
     p.speedY = -10;
   }
   else if (playerInput["ArrowDown"] && p.y < (canvasH - p.height)){
     p.speedY = 10;
   }
   else{
-    console.log("stopped");
     p.speedY = 0;
   }
 }
@@ -136,11 +155,9 @@ function collision(rect1, rect2) {
 
 
 function keyDown(e){
-  console.log("press");
   return playerInput[e.key] = true;
 }
 function keyUp(e){
-  console.log("release");
   return playerInput[e.key] = false;
 }
 

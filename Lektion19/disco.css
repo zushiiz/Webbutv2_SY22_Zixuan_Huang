@@ -1,0 +1,56 @@
+/*Add this in any css file and have disco :swag:*/
+body * {
+  animation: backgroundDisco 5s infinite ease-in-out;  
+}
+
+@keyframes backgroundDisco {
+  0% {
+    background-color: red;
+    color: violet;
+    transform: rotateZ(0deg);
+
+  }
+  14%{
+    background-color: orange;
+    color: indigo;
+
+  }
+  20%{
+    transform: rotateZ(360deg);    
+  }
+  28%{
+    background-color: yellow;
+    color: blue;
+
+  }
+  40%{
+    transform: rotateY(0deg);    
+  }
+  42%{
+    background-color: green;
+    color: green;
+  }
+  56%{
+    background-color: blue;
+    color: orange;
+  }
+  60%{
+    transform: rotateY(360deg);    
+  }
+  70%{
+    background-color: indigo;
+    color: yellow;
+  }
+  80%{
+    transform: rotateX(0deg);
+  }
+  85%{
+    background-color: violet;
+    color: red;
+  }
+  100%{
+    background-color: red;
+    color: violet;
+    transform: rotateX(0deg);
+  }
+}
