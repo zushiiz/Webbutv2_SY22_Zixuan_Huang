@@ -81,9 +81,9 @@ function ballObject(w, h, x, y){
     if (collision(player1, ball) || collision(player2, ball)){
       this.speedX *= -1;
       if (this.speedX > 0){
-        this.speedX += 0.1;
+        this.speedX += 0.3;
       } else{
-        this.speedX -= 0.1;
+        this.speedX -= 0.3;
       }
       this.speedY = Math.floor(Math.random() * 10);
     }
@@ -100,12 +100,14 @@ function ballObject(w, h, x, y){
 }
 
 function score(){
+  let playerScored;
   if (ball.x > canvasW) {
     p1Score += 1;
     document.getElementById("player1").innerHTML = p1Score;
   } 
   else if (ball.x < -ball.width){
     p2Score += 1;
+    playerScored = true;
     document.getElementById("player2").innerHTML = p2Score;
   }
   if(ball.x > canvasW || 
@@ -114,8 +116,9 @@ function score(){
       player1 = new playerObject(30, 100, 10, canvasH/2);
       player2 = new playerObject(30, 100, 960,canvasH/2);
       ball = new ballObject(30, 30, canvasW/2, canvasH/2);
-      if (p1Score > p2Score) { // doesnt work
-        ball.speedX * -1;
+      if (playerScored) {
+        ball.speedX *= -1;
+        playerScored = false;
       }
     }
 }
@@ -152,7 +155,6 @@ function collision(rect1, rect2) {
     rect1.y + rect1.height > rect2.y
   );
 }
-
 
 function keyDown(e){
   return playerInput[e.key] = true;
